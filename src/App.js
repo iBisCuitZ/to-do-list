@@ -16,6 +16,7 @@ function App() {
           setTodos={setTodos}
         />
       </div>
+      {console.log("CookieXD")}
       <div>
         <TodosList todos={todos} setTodos={setTodos}/>
       </div>
