@@ -1,6 +1,11 @@
-<<<<<<< HEAD
+
 # to-do-list
-to-do-list with ReactJS
+
+to run the project you need
+step to run the project 
+1. cd into to-do-list
+2. npm start
+3. Open [http://localhost:3000](http://localhost:3000)
 
 # Getting Started with Create React App
 
