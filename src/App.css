@@ -3,18 +3,40 @@
   padding: 0;
   box-sizing: border-box;
 }
+.appJSContainer {
+  width: 100vw;
+  height: 90vh;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin: 30px auto;
+  background-color: #505050;
+  border-radius: 10%;
+  /* align-content: center; */
+  /* justify-content: center; */
+}
 body {
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  background-image: linear-gradient(120deg, #272c31 0%, #1d1816 100%);
   color: white;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
 }
+.alert{
+  text-align: center;
+  background-color: #e8f3ff;
+  align-content: center;
+  justify-content: center;
+  margin: 5%;
+  font-size:3em;
+}
 header {
   font-size: 2rem;
 }
-
+.mainForm{
+  width: 100%;
+}
 header,
 form {
+  width: 100%;
   min-height: 20vh;
   display: flex;
   justify-content: center;
@@ -92,8 +114,10 @@ form button:hover {
 }
 
 .completed {
+  margin: 0%;
+  /* background-color: #272c31; */
   text-decoration: line-through;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 /*CUSTOM SELECTOR */
@@ -137,3 +161,7 @@ select {
   transform: scale(1.5);
 }
 */
+
+.headerTodos{
+  
+}
