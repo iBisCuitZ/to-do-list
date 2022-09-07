@@ -1,0 +1,41 @@
+div .card {
+    margin:0%;
+    height: 90%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+div .cardContainer{
+    margin:0%;
+    width: 100%;
+    height: 8vh;
+}
+.cardRow{
+    margin:0%;
+    height:100%;
+    width: 100%;
+}
+div .row{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-8{
+    font-size: 2.5em;
+}
+
+div #todoCard{
+    height: 100%;
+    padding:0%;
+    align-content: right;
+    justify-content: right;
+}
+
+button{
+    width:100%;
+    height: 100%;
+    padding:0px;
+    justify-content: center;
+    
+}

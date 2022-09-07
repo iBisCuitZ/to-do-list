@@ -1,0 +1,9 @@
+input{
+    width:100%;
+    border-radius: 10px;
+}
+.btn-primary{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
