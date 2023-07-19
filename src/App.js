@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+import React, { useState,useEffect } from 'react';
 import './App.css';
 import FormTodo from './components/Form.jsx';
 import TodosList from './components/TodosList.jsx';
-import Sidebar from './components/Sidebar';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Alert from 'react-bootstrap/Alert';
 function App() {
   const [input, setInput] = useState('');
-  const [todos, setTodos] = useState(() => {
+  const [todos, setTodos] = useState(()=>{
     const savedTodos = localStorage.getItem('todos');
 
     if (savedTodos) {
@@ -16,48 +18,42 @@ function App() {
     }
   });
   const [editTodo, setEditTodo] = useState(null);
-  useEffect(() => {
+  useEffect(()=>{
     localStorage.setItem('todos', JSON.stringify(todos));
-  }, [todos]);
+
+  },[todos])
   return (
-    <div className='appJSContainer container-fluid d-flex remove-padding'>
-      {/* <div className='row d-flex-container'> */}
-      <div className='col-sm-2 sidebar-container'>
-        <Sidebar className='d-flex'></Sidebar>
-      </div>
-      <div className='col-md-10 '>
-        <div className='row container-fluid header-container'>
-          <div
-            className='alert alert-dark'
-            key='dark'
-            variant='dark'
-          >
-            To Do List <br />
-            {Date().toString()}
-            
+    <Container className='appJSContainer'>
+      <Row className='justify-content-md-center'>
+        <Col className='col-md-8 '>
+          <div className='to-do-list'>
+            <Alert
+              className='center-block'
+              key='dark'
+              variant='dark'
+            >
+              To Do List
+            </Alert>
+            <FormTodo
+              className='mainForm'
+              input={input}
+              setInput={setInput}
+              todos={todos}
+              setTodos={setTodos}
+              editTodo={editTodo}
+              setEditTodo={setEditTodo}
+            />
           </div>
-        </div>
-        <div className='row container-fluid form-container'>
-          <FormTodo
-            className='mainForm'
-            input={input}
-            setInput={setInput}
-            todos={todos}
-            setTodos={setTodos}
-            editTodo={editTodo}
-            setEditTodo={setEditTodo}
-          />
-        </div>
-        <div>
-          <TodosList
-            todos={todos}
-            setTodos={setTodos}
-            setEditTodo={setEditTodo}
-          />
-          {/* </div> */}
-        </div>
-      </div>
-    </div>
+          <div>
+            <TodosList
+              todos={todos}
+              setTodos={setTodos}
+              setEditTodo={setEditTodo}
+            />
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
