@@ -9,7 +9,7 @@ import { FaEdit } from 'react-icons/fa';
 import { AiFillDelete } from 'react-icons/ai';
 import './TodosList.css';
 
-function TodosList({ todos, setTodos, setEditTodo }) {
+function TodosList({ todos, setTodos, setEditTodo, date }) {
 
     const handleDelete = ({ id }) => {
         setTodos(todos.filter((todo) => todo.id !== id));
@@ -41,13 +41,14 @@ function TodosList({ todos, setTodos, setEditTodo }) {
                     <div className={`cardRow flex justify-between mt-2 pl-4 py-2
                             animate-jump animate-ease-in  border-2 
                             rounded-lg items-center ${todo.completed ? 'border-green-300' : 'border-pink-200'}`}>
-                        <Col className='col-8'>
-                            <div className={`${todo.completed ? 'completed text-gray-300' : 'notComplete'} select-none `}>
+                        <Col className='col-6'>
+                            <div className={`${todo.completed ? 'completed text-gray-300' : 'notComplete'} select-none text-3xl pl-3`}>
                                 {todo.title}
                             </div>
                         </Col>
+                        <Col className='text-xl mx-4'>{date}</Col>
                         <Col
-                            className='col'
+                            className='col m-1'
                             id='todoCard'
                         >
                             <button
