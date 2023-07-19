@@ -10,6 +10,7 @@ import { AiFillDelete } from 'react-icons/ai';
 import './TodosList.css';
 
 function TodosList({ todos, setTodos, setEditTodo }) {
+
     const handleDelete = ({ id }) => {
         setTodos(todos.filter((todo) => todo.id !== id));
     };
@@ -38,8 +39,8 @@ function TodosList({ todos, setTodos, setEditTodo }) {
                     key={todo.id}
                 >
                     <div className={`cardRow flex justify-between mt-2 pl-4 py-2
-                            animate-jump animate-ease-in border-pink-200 border-2 
-                            rounded-lg items-center ${todo.completed ? 'border-green-300' : ''}`}>
+                            animate-jump animate-ease-in  border-2 
+                            rounded-lg items-center ${todo.completed ? 'border-green-300' : 'border-pink-200'}`}>
                         <Col className='col-8'>
                             <div className={`${todo.completed ? 'completed text-gray-300' : 'notComplete'} select-none `}>
                                 {todo.title}
